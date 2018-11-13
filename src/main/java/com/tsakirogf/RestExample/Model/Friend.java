@@ -5,11 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Friend 
 {
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO )
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO )
 	private int id;
 	private String firstName;
 	private String lastName;

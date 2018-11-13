@@ -6,5 +6,4 @@ import com.tsakirogf.RestExample.Model.Friend;
 
 public interface FriendService extends CrudRepository<Friend, Integer> 
 {
-    //
 }
