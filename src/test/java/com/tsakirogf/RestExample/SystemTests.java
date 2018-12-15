@@ -25,9 +25,9 @@ public class SystemTests
 
       Friend[] friends = restTemplate.getForObject(url, Friend[].class);
       Assertions.assertThat(friends).extracting(Friend::getFirstName).contains("Gordon");
-
+      int array_len=restTemplate.getForObject(url, Friend[].class).length;
       restTemplate.delete(url + "/" + entity.getBody().getId());
-      Assertions.assertThat(restTemplate.getForObject(url, Friend[].class)).isEmpty();
+      Assertions.assertThat(restTemplate.getForObject(url, Friend[].class).length).isEqualTo(array_len -1);
     }
 
     @Test
@@ -53,11 +53,14 @@ public class SystemTests
         Assertions.assertThat(friends).extracting(Friend::getLastName).contains("Tsakiroglou");
         Assertions.assertThat(friends).extracting(Friend::getLastName).contains("Tsourou");
 
+        int array_len=restTemplate.getForObject(url, Friend[].class).length;
+
         restTemplate.delete(url + "/" + entity.getBody().getId());
         restTemplate.delete(url + "/" + entity2.getBody().getId());
         restTemplate.delete(url + "/" + entity3.getBody().getId());
         restTemplate.delete(url + "/" + entity4.getBody().getId());
-        Assertions.assertThat(restTemplate.getForObject(url, Friend[].class)).isEmpty();
+
+        Assertions.assertThat(restTemplate.getForObject(url, Friend[].class).length).isEqualTo(array_len - 4);
     }
     /*@Test
     public void testErrorHandlingReturnsBadRequest() {

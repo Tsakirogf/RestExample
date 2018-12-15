@@ -28,7 +28,7 @@ public class FriendController
     FriendService friendService;
 	
 	@GetMapping("/friend")
-	Iterable<Friend> read()
+	public Iterable<Friend> read()
 	{
 		return friendService.findAll();
 	}
@@ -46,7 +46,7 @@ public class FriendController
 	}
 	
 	@PostMapping("/friend")
-	Friend create(@RequestBody Friend friend)
+    public Friend create(@RequestBody Friend friend)
 	{
 		if(friend.getId() == 0 && friend.getFirstName() != null && friend.getLastName() != null)
 		{
@@ -72,7 +72,7 @@ public class FriendController
 	}
 	
 	@DeleteMapping("/friend/{id}")
-	void delete(@PathVariable Integer id)
+	public void delete(@PathVariable Integer id)
 	{
 		friendService.deleteById(id);
 	}

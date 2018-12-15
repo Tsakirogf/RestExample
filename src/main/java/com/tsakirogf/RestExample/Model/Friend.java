@@ -1,5 +1,6 @@
 package com.tsakirogf.RestExample.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,10 +31,10 @@ public class Friend
 	Address address;
 
 	@JsonManagedReference
-	@OneToMany(mappedBy = "friend", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "friend", cascade = CascadeType.MERGE)
 	List<Contact> contacts;
 
-	public Friend(String firstName, String lastName, Address address, List<Contact> contacts)
+	public Friend(String firstName, String lastName, Address address, ArrayList<Contact> contacts)
     {
         this.firstName = firstName;
         this.lastName = lastName;
