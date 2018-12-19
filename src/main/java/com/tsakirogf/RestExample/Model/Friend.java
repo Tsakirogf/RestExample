@@ -46,7 +46,12 @@ public class Friend
     {
     }
 
-    public List<Contact> getContacts() {
+	public Friend(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public List<Contact> getContacts() {
 		return contacts;
 	}
 	public void setContacts(List<Contact> contacts) {
