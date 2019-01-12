@@ -19,18 +19,17 @@
 		<version>2.0.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-
-		<dependencies>
-		  <dependency>
-		    <groupId>junit</groupId>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
-			  <scope>test</scope>
+			<scope>test</scope>
 		    <version>4.12</version>
-		  </dependency>
-		  <dependency>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			  <scope>provided</scope>
+			<scope>provided</scope>
 			<version>2.1.0.RELEASE</version>
 		</dependency>
 		<dependency>

@@ -15,7 +15,7 @@ public class Address {
 		this.streetName = streetName;
 		this.streetNumber = streetNumber;
 		this.cityName = cityName;
-		ZIP = ZIP;
+		this.ZIP = ZIP;
 	}
 	
 	public Address() 
@@ -54,7 +54,7 @@ public class Address {
 	}
 	public void setZIP(String ZIP) 
 	{
-		ZIP = ZIP;
+		this.ZIP = ZIP;
 	}
 	
 	

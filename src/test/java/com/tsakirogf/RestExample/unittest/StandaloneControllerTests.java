@@ -32,7 +32,7 @@ public class StandaloneControllerTests
     MockMvc mockMvc;
 
     @Test
-    public void tesrCreateReadDelete() throws Exception
+    public void testCreateReadDelete() throws Exception
     {
         Friend friend = new Friend("Gordon", "Moore");
         List<Friend> friends= Arrays.asList(friend);

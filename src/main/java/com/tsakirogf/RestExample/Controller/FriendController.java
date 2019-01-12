@@ -76,4 +76,24 @@ public class FriendController
 	{
 		friendService.deleteById(id);
 	}
+
+	@GetMapping("/wrong")
+	public Friend somethingIsWrong()
+	{
+		throw new ValidationException("Something is Wrong");
+	}
+
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ExceptionHandler(ValidationException.class)
+	String exceptionbadRequestHandler(ValidationException e)
+    {
+	    return e.getMessage();
+    }
+
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ExceptionHandler(ValidationException.class)
+	String exceptionNotFoundHandler(ValidationException e)
+	{
+		return e.getMessage();
+	}
 }
