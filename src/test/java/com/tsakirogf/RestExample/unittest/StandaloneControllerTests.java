@@ -34,13 +34,13 @@ public class StandaloneControllerTests
     @Test
     public void testCreateReadDelete() throws Exception
     {
-        Friend friend = new Friend("Gordon", "Moore");
+        Friend friend = new Friend("Michael", "Jordan");
         List<Friend> friends= Arrays.asList(friend);
 
         Mockito.when(friendService.findAll()).thenReturn(friends);
         mockMvc.perform(get("/friend"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", Matchers.hasSize(1)))
-                .andExpect(jsonPath("$[0].first-name", Matchers.is("Gordon")));
+                .andExpect(jsonPath("$[0].first-name", Matchers.is("Michael")));
     }
 }
