@@ -79,4 +79,20 @@ public class IntegrationTests
             Assert.assertEquals(HttpStatus.BAD_REQUEST.toString(), "400");
         }
     }
+
+    @Test
+    public void testFindByFirstLastname()
+    {
+        Friend friend = new Friend ("Gordon",
+                "Brown",
+                new Address("Dikaiarhou", 15, "Athens", "14560"),
+                new ArrayList<Contact> (Arrays.asList(new Contact(1, "phone", ContactType.MOBILE))));
+        Friend friendResult = friendController.create(friend);
+        Iterable<Friend> friends = friendController.findByFirstAndLastName("Gordon", "Brown");
+        Assertions.assertThat(friends).first().hasFieldOrPropertyWithValue("firstName", "Gordon");
+        friendController.delete(friendResult.getId());
+        Assertions.assertThat(friendController.read()).isEmpty();
+    }
+
+
 }

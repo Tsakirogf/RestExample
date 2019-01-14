@@ -34,7 +34,7 @@ public class FriendController
 	}
 	
 	@GetMapping("/friend/search")
-	Iterable<Friend> findByFirstAndLastName(@RequestParam("first") String firstName, @RequestParam("last") String lastName)
+	public Iterable<Friend> findByFirstAndLastName(@RequestParam("first") String firstName, @RequestParam("last") String lastName)
 	{
 		return friendService.findByFirstNameAndLastName(firstName, lastName);
 	}
